@@ -1,0 +1,204 @@
+<template>
+  <div class="create-article">
+    <h1>Create Article</h1>
+
+    <!-- Article Form -->
+    <form @submit.prevent="submitForm">
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          v-model="form.title"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          v-model="form.content"
+          class="form-control"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Category Name -->
+      <div class="form-group">
+        <label for="category_name">Category Name</label>
+        <input
+          type="text"
+          id="category_name"
+          v-model="form.category_name"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Tags -->
+      <div class="form-group">
+        <label for="tags">Tags (Comma Separated)</label>
+        <input
+          type="text"
+          id="tags"
+          v-model="form.tagsInput"
+          class="form-control"
+          @input="updateTags"
+        />
+        <small class="form-text text-muted">Enter tags separated by commas.</small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-submit">Submit</button>
+    </form>
+
+    <!-- Success/Error Messages -->
+    <div v-if="message" :class="messageType">
+      <p>{{ message }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        title: '',
+        content: '',
+        category_name: '',
+        tagsInput: '', // Tags input as string
+        tags: [] // Tags in array format
+      },
+      message: '',
+      messageType: '',
+    };
+  },
+  methods: {
+    // Update tags when the user types in the input field
+    updateTags() {
+      this.form.tags = this.form.tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
+    },
+    // Handle form submission
+    async submitForm() {
+      const data = {
+        article: {
+          title: this.form.title,
+          content: this.form.content,
+          category_name: this.form.category_name,
+          tags: this.form.tags
+        }
+      };
+
+      try {
+        const token = localStorage.getItem('JWT_token')
+        const response = await this.$axios.post(
+            'http://localhost:3000/api/articles',
+            data,
+            {
+            headers:{
+              Authorization: `Bearer ${token}`,
+            }
+          });
+
+        // Success message
+        this.message = 'Article successfully created!';
+        this.messageType = 'alert alert-success';
+        this.$router.push('/dashboard');
+      } catch (error) {
+        // Error message
+        this.message = 'Error creating article. Please try again.';
+        this.messageType = 'alert alert-danger';
+      }
+    },
+  }
+};
+</script>
+
+<style scoped>
+.create-article {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f0f8ff; /* Light cyan background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #0077b6; /* Deep blue */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0077b6;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #0077b6;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  border-color: #0096c7; /* Lighter blue on focus */
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0077b6; /* Deep blue button */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0096c7; /* Lighter blue on hover */
+}
+
+button:disabled {
+  background-color: #b0c4de; /* Light grey when disabled */
+  cursor: not-allowed;
+}
+
+small {
+  font-size: 0.875rem;
+  color: #0077b6; /* Light blue hint text */
+}
+
+.alert {
+  margin-top: 1rem;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.alert-success {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.alert-danger {
+  background-color: #fbe9e7;
+  color: #d32f2f;
+}
+</style>
