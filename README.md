@@ -32,6 +32,7 @@
  * login するとlocalstorageにuserid、jwt_tokenを保存
  * logoutの時localstorageにuserid, jwt_tokenを削除
  * tokenの満了期間=1時間
+ * passwordは6文字以上
 
 ### main page
 <img src="https://github.com/user-attachments/assets/9e0fa923-1771-42e0-82b4-81c93c482fa4" width="50%" />
