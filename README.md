@@ -33,6 +33,10 @@
 
 `'/' : Login page`
 
+`signup : SignUp page`
+
+`/dashboard : Main page`
+
  ## blog vue page説明
 
  ### Sign in page
