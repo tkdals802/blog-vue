@@ -27,25 +27,25 @@
  ### blog vue page説明
 
  ### Sign in page
- ![image](https://github.com/user-attachments/assets/721c4fd7-98bf-4f8f-96af-5443496f8996)
+ <img src="https://github.com/user-attachments/assets/721c4fd7-98bf-4f8f-96af-5443496f8996" width="50%" />
 
 ### main page
-![image](https://github.com/user-attachments/assets/9e0fa923-1771-42e0-82b4-81c93c482fa4)
+<img src="https://github.com/user-attachments/assets/9e0fa923-1771-42e0-82b4-81c93c482fa4" width="50%" />
 
 ### category filtering
-![image](https://github.com/user-attachments/assets/ed3ba8e3-8fc0-4ca8-af6d-535bd64c6b5e)
+<img src="https://github.com/user-attachments/assets/ed3ba8e3-8fc0-4ca8-af6d-535bd64c6b5e" width="50%" />
 
 ### post 生成 page
-![image](https://github.com/user-attachments/assets/359639e1-568a-4a5a-8b50-8539f75768f7)
+<img src="https://github.com/user-attachments/assets/359639e1-568a-4a5a-8b50-8539f75768f7" width="50%" />
 
 ### post 内容 page
-![image](https://github.com/user-attachments/assets/f806de32-fb81-4b51-b411-6beb69d07f7b)
+<img src="https://github.com/user-attachments/assets/f806de32-fb81-4b51-b411-6beb69d07f7b" width="50%" />
 
 ### titleで検索結果 page
-![image](https://github.com/user-attachments/assets/d2c47d35-8255-4a0d-ad21-38b5304cdbd0)
+<img src="https://github.com/user-attachments/assets/d2c47d35-8255-4a0d-ad21-38b5304cdbd0" width="50%" />
 
 ### 会員登録 page
-![image](https://github.com/user-attachments/assets/6dcfb844-cb80-4958-b4e2-b8541ac3103e)
+<img src="https://github.com/user-attachments/assets/6dcfb844-cb80-4958-b4e2-b8541ac3103e" width="50%" />
 
 ### post 修整 page
-![image](https://github.com/user-attachments/assets/14c6fc03-3174-43c9-9283-fccefb72bca0)
+<img src="https://github.com/user-attachments/assets/14c6fc03-3174-43c9-9283-fccefb72bca0" width="50%" />
