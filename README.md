@@ -44,7 +44,7 @@
 ### category filtering
 <img src="https://github.com/user-attachments/assets/ed3ba8e3-8fc0-4ca8-af6d-535bd64c6b5e" width="50%" />
 
-- categoryリストの中から一つを選択してcategoryでpostフィルタリングができる
+- categoryリストの中から一つを選択してcategoryでpostをfilteringができる
 
 ### titleで検索結果 page
 <img src="https://github.com/user-attachments/assets/d2c47d35-8255-4a0d-ad21-38b5304cdbd0" width="50%" />
