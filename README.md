@@ -21,8 +21,8 @@
     * store/
       authStore.js  -  login, logout, Auth logicを正義
     * views/  -  blog内部のvue-pageを正義
-      App.vue  -  最上位vue-file
-      main.js  -  最上位 file
+    * App.vue  -  最上位vue-file
+    * main.js  -  最上位 file
     
  ## blog vue page説明
 
