@@ -29,6 +29,9 @@
 - jwt tokenを使用して最初のログイン時にtokenとuser_idをlocal storageに保存する
 - このようなlogicでloginをしないとurlを入力するだけではblog内部に進入できない
 
+## page route
+
+`'/' : Login page`
 
  ## blog vue page説明
 
