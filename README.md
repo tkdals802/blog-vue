@@ -23,7 +23,13 @@
     * views/  -  blog内部のvue-pageを正義
     * App.vue  -  最上位vue-file
     * main.js  -  最上位 file
-    
+
+ ## login logic
+- loginをしてページの内部に入ると、login状態を維持し、apiを呼び出すたびに確認しなければならない
+- jwt tokenを使用して最初のログイン時にtokenとuser_idをlocal storageに保存する
+- このようなlogicでloginをしないとurlを入力するだけではblog内部に進入できない
+
+
  ## blog vue page説明
 
  ### Sign in page
