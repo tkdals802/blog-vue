@@ -4,7 +4,7 @@
 - node-version = 23.7.0
 - npm-version=10.9.2
 - 開発os = ubuntu
-- 開発tool = chrome
+- 開発tool = intellij, chrome
 
 ### vue setup
 `$ npm create vue`
