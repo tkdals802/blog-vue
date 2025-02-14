@@ -49,6 +49,7 @@
 ### titleで検索結果 page
 <img src="https://github.com/user-attachments/assets/d2c47d35-8255-4a0d-ad21-38b5304cdbd0" width="50%" />
 
+- 入力内容がなければpage移動をしない
 
 ### post 生成 page
 <img src="https://github.com/user-attachments/assets/359639e1-568a-4a5a-8b50-8539f75768f7" width="50%" />
