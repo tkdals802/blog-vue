@@ -1,4 +1,4 @@
-
+/* style 分離 */
 .container {
   max-width: 800px;
   margin: auto;
@@ -94,7 +94,7 @@
   background-color: #ff1a1a;
 }
 
-/* Mobile responsive */
+/* Mobile 環境 */
 @media (max-width: 768px) {
   .container {
     padding: 15px;
@@ -137,6 +137,7 @@
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .title {
     font-size: 18px;

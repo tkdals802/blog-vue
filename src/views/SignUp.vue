@@ -1,6 +1,8 @@
 <template>
   <div class="signup-container">
     <h2>会員登録</h2>
+
+    <!-- username / password / password-確認 input -->
     <form @submit.prevent="submitSignUp">
       <div class="input-group">
         <label for="username">username</label>
@@ -48,11 +50,10 @@ export default {
           user: this.user,
         });
 
-        // 성공적으로 회원가입이 되면 리디렉션하거나 메시지 출력
-        console.log('회원가입 성공', response.data);
-        this.$router.push('/');  // 로그인 페이지로 이동 (원하는 페이지로 변경 가능)
+        //
+        console.log('会員登録 success', response.data);
+        this.$router.push('/');  // go to login page
       } catch (error) {
-        // 에러가 발생한 경우
         if (error.response) {
           this.errorMessage = error.response.data.error || 'error occurred';
         } else {
@@ -68,7 +69,7 @@ export default {
 <style scoped>
 .signup-container {
   width: 100%;
-  max-width: 400px; /* 데스크탑에서 최대 너비를 설정 */
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -112,15 +113,16 @@ button:hover {
   text-align: center;
 }
 
+/* mobile 環境 */
 @media (max-width: 768px) {
   .signup-container {
     width: 100%;
-    max-width: 100%; /* 모바일에서는 전체 너비로 확장 */
+    max-width: 100%;
     padding: 15px;
   }
 
   h2 {
-    font-size: 20px; /* 제목 크기 조정 */
+    font-size: 20px;
   }
 
   .input-group {
@@ -135,11 +137,11 @@ button:hover {
 
 @media (max-width: 480px) {
   h2 {
-    font-size: 18px; /* 모바일 화면에서 제목 더 작게 설정 */
+    font-size: 18px;
   }
 
   .error {
-    font-size: 12px; /* 에러 메시지 크기 조정 */
+    font-size: 12px;
   }
 }
 </style>

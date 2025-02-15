@@ -2,7 +2,7 @@
   <div class="create-article">
     <h1>Edit Article</h1>
 
-    <!-- Article Form -->
+    <!-- title / content / category / tags update -->
     <form @submit.prevent="submitForm">
       <!-- Title -->
       <div class="form-group">
@@ -79,13 +79,13 @@ export default {
     };
   },
   created() {
-    const postId = this.$route.params.id;  // Get the ID from the URL
+    const postId = this.$route.params.id;  // Get the ID from route
     const token = localStorage.getItem('JWT_token'); // Get JWT token for authorization
 
     this.$axios
       .get(`http://localhost:3000/api/articles/${postId}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`, //check token
         },
       })
       .then((response) => {
@@ -103,12 +103,12 @@ export default {
       });
   },
   methods: {
-    // Update tags when the user types in the input field
+    // , を基準にtagを分離
     updateTags() {
       this.form.tags = this.form.tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
     },
 
-    // Handle form submission to update the article
+    // update post
     async submitForm() {
       const postId = this.$route.params.id;
       const data = {
@@ -127,7 +127,7 @@ export default {
             data,
             {
               headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,//check token
               }
             }
         );
@@ -144,14 +144,14 @@ export default {
 .create-article {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f0f8ff; /* Light cyan background */
+  background-color: #f0f8ff;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #0077b6; /* Deep blue */
+  color: #0077b6;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -176,14 +176,14 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #0096c7; /* Lighter blue on focus */
+  border-color: #0096c7;
   outline: none;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  background-color: #0077b6; /* Deep blue button */
+  background-color: #0077b6;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -194,20 +194,20 @@ button {
 }
 
 button:hover {
-  background-color: #0096c7; /* Lighter blue on hover */
+  background-color: #0096c7;
 }
 
 button:disabled {
-  background-color: #b0c4de; /* Light grey when disabled */
+  background-color: #b0c4de;
   cursor: not-allowed;
 }
 
 small {
   font-size: 0.875rem;
-  color: #0077b6; /* Light blue hint text */
+  color: #0077b6;
 }
 
-/* Mobile responsiveness */
+/* Mobile 環境 */
 @media (max-width: 768px) {
   .create-article {
     width: 100%;
@@ -216,7 +216,7 @@ small {
   }
 
   h1 {
-    font-size: 24px; /* Smaller title on mobile */
+    font-size: 24px;
   }
 
   label {
@@ -238,6 +238,7 @@ small {
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .create-article {
     width: 100%;
@@ -246,7 +247,7 @@ small {
   }
 
   h1 {
-    font-size: 20px; /* Even smaller title for small screens */
+    font-size: 20px;
   }
 
   input, textarea {

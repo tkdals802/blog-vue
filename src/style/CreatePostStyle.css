@@ -1,15 +1,15 @@
-
+/* style 分離 */
 .create-article {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f0f8ff; /* Light cyan background */
+  background-color: #f0f8ff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #0077b6; /* Deep blue */
+  color: #0077b6;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -34,14 +34,14 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #0096c7; /* Lighter blue on focus */
+  border-color: #0096c7;
   outline: none;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  background-color: #0077b6; /* Deep blue button */
+  background-color: #0077b6;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -52,20 +52,20 @@ button {
 }
 
 button:hover {
-  background-color: #0096c7; /* Lighter blue on hover */
+  background-color: #0096c7;
 }
 
 button:disabled {
-  background-color: #b0c4de; /* Light grey when disabled */
+  background-color: #b0c4de;
   cursor: not-allowed;
 }
 
 small {
   font-size: 0.875rem;
-  color: #0077b6; /* Light blue hint text */
+  color: #0077b6;
 }
 
-/* Mobile responsive */
+/* Mobile 環境 */
 @media (max-width: 768px) {
   .create-article {
     padding: 15px;
@@ -93,6 +93,7 @@ small {
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .create-article {
     padding: 10px;

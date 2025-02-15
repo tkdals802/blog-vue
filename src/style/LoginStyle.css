@@ -1,4 +1,4 @@
-
+/* style 分離 */
 .login-container {
   max-width: 400px;
   margin: 50px auto;
@@ -54,6 +54,7 @@ button:hover {
   margin-top: 20px;
 }
 
+/* mobile 環境 */
 @media (max-width: 768px) { /*768px 以下では 100% 幅*/
   .login-container {
     max-width: 100%;
@@ -92,6 +93,7 @@ button:hover {
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .login-container {
     padding: 10px;

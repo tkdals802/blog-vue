@@ -2,7 +2,7 @@
   <div class="login-container">
     <h2>Sign in</h2>
 
-    <!-- username / password / password-確認 input -->
+    <!-- username / password input -->
     <form @submit.prevent="submitLogin">
       <div class="input-group">
         <label for="username">id</label>
