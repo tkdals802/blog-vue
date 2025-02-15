@@ -2,11 +2,13 @@
   <div class="container">
     <h1 class="title">📌 ruby ブログ</h1>
 
+    <!-- username, logout btn -->
     <div class="user-info">
       <h3>user : {{ user.username }}</h3>
       <button @click="logout" class="logout-btn">Logout</button>
     </div>
 
+    <!-- search text input / categories / search btn / create Post btn -->
     <div class="user-container">
       <input v-model="inputText" type="text" placeholder="search title..." class="text-input" />
 
@@ -19,6 +21,7 @@
       <button @click="goToCreatePost" class="search-btn">Create Post</button>
     </div>
 
+    <!-- post list -->
     <ul>
       <ul class="dashboard-bar">
         <li>title</li>
@@ -43,6 +46,7 @@
 </template>
 
 <script>
+/* script 分離 */
 import dashboardScript from "../scripts/DashboardScript.js";
 
 export default {
@@ -157,6 +161,7 @@ export default {
   list-style-type: none;
 }
 
+/* mobile 環境 */
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
@@ -208,6 +213,7 @@ export default {
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .post-title {
     font-size: 14px;

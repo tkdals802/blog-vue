@@ -64,6 +64,7 @@
 </template>
 
 <script>
+/* script 分離 */
 import createPostScript from "../scripts/CreatePostScript.js";
 
 export default {

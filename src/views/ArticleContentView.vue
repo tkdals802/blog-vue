@@ -12,7 +12,7 @@
         <strong>Category:</strong> {{ post?.category_name }}
       </div>
 
-      <!-- Tags -->
+      <!-- Tags list -->
       <div class="tags">
         <strong>Tags:</strong>
         <ul class="tag-list">
@@ -138,7 +138,7 @@ export default {
   background-color: #ff1a1a;
 }
 
-/* Mobile responsive */
+/* Mobile 環境 */
 @media (max-width: 768px) {
   .container {
     padding: 15px;
@@ -181,6 +181,7 @@ export default {
   }
 }
 
+/* mobile 環境 */
 @media (max-width: 480px) {
   .title {
     font-size: 18px;
@@ -203,7 +204,6 @@ export default {
     padding: 12px;
   }
 }
-
 
 </style>
 
