@@ -91,7 +91,6 @@ export default {
       .then((response) => {
         const post = response.data.article;
 
-
         this.form.title = post.title;
         this.form.content = post.content;
         this.form.category_name = response.data.category_name;
@@ -123,7 +122,7 @@ export default {
 
       try {
         const token = localStorage.getItem('JWT_token');
-        const response = await this.$axios.put(
+        await this.$axios.put(
             `http://localhost:3000/api/articles/${postId}`,
             data,
             {
@@ -132,15 +131,9 @@ export default {
               }
             }
         );
-
-        // Success message
-        this.message = 'Article successfully updated!';
-        this.messageType = 'alert alert-success';
         this.$router.push(`/post/${postId}`); // Redirect to the updated post page
       } catch (error) {
-        // Error message
-        this.message = 'Error updating article. Please try again.';
-        this.messageType = 'alert alert-danger';
+        console.log(error)
       }
     },
   }
@@ -152,7 +145,7 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   background-color: #f0f8ff; /* Light cyan background */
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -214,19 +207,55 @@ small {
   color: #0077b6; /* Light blue hint text */
 }
 
-.alert {
-  margin-top: 1rem;
-  padding: 15px;
-  border-radius: 8px;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .create-article {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller title on mobile */
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input, textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  small {
+    font-size: 0.8rem;
+  }
 }
 
-.alert-success {
-  background-color: #e0f7fa;
-  color: #00796b;
-}
+@media (max-width: 480px) {
+  .create-article {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
 
-.alert-danger {
-  background-color: #fbe9e7;
-  color: #d32f2f;
+  h1 {
+    font-size: 20px; /* Even smaller title for small screens */
+  }
+
+  input, textarea {
+    font-size: 0.85rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="create-article">
-    <h1>Create Article</h1>
+    <h1>Create Post</h1>
 
     <!-- Article Form -->
     <form @submit.prevent="submitForm">
@@ -64,141 +64,12 @@
 </template>
 
 <script>
+import createPostScript from "../scripts/CreatePostScript.js";
+
 export default {
-  data() {
-    return {
-      form: {
-        title: '',
-        content: '',
-        category_name: '',
-        tagsInput: '', // Tags input as string
-        tags: [] // Tags in array format
-      },
-      message: '',
-      messageType: '',
-    };
-  },
-  methods: {
-    // Update tags when the user types in the input field
-    updateTags() {
-      this.form.tags = this.form.tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
-    },
-    // Handle form submission
-    async submitForm() {
-      const data = {
-        article: {
-          title: this.form.title,
-          content: this.form.content,
-          category_name: this.form.category_name,
-          tags: this.form.tags
-        }
-      };
+  ...createPostScript
+}
 
-      try {
-        const token = localStorage.getItem('JWT_token')
-        const response = await this.$axios.post(
-            'http://localhost:3000/api/articles',
-            data,
-            {
-            headers:{
-              Authorization: `Bearer ${token}`,
-            }
-          });
-
-        // Success message
-        this.message = 'Article successfully created!';
-        this.messageType = 'alert alert-success';
-        this.$router.push('/dashboard');
-      } catch (error) {
-        // Error message
-        this.message = 'Error creating article. Please try again.';
-        this.messageType = 'alert alert-danger';
-      }
-    },
-  }
-};
 </script>
 
-<style scoped>
-.create-article {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f0f8ff; /* Light cyan background */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-h1 {
-  color: #0077b6; /* Deep blue */
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0077b6;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #0077b6;
-  box-sizing: border-box;
-}
-
-input:focus, textarea:focus {
-  border-color: #0096c7; /* Lighter blue on focus */
-  outline: none;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0077b6; /* Deep blue button */
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #0096c7; /* Lighter blue on hover */
-}
-
-button:disabled {
-  background-color: #b0c4de; /* Light grey when disabled */
-  cursor: not-allowed;
-}
-
-small {
-  font-size: 0.875rem;
-  color: #0077b6; /* Light blue hint text */
-}
-
-.alert {
-  margin-top: 1rem;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.alert-success {
-  background-color: #e0f7fa;
-  color: #00796b;
-}
-
-.alert-danger {
-  background-color: #fbe9e7;
-  color: #d32f2f;
-}
-</style>

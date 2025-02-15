@@ -1,6 +1,7 @@
 import { useAuthStore } from "../store/authStore";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
+import "../style/LoginStyle.css";
 
 export default {
   setup() {
@@ -18,7 +19,7 @@ export default {
       if (success) {
         router.push("/dashboard"); // 로그인 성공 시 이동
       } else {
-        errorMessage.value = "로그인 실패. 다시 시도하세요.";
+        errorMessage.value = "login fail please retry.";
       }
     };
 

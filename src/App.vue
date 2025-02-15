@@ -1,28 +1,21 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Navbar from "./components/Navbar.vue";
-</script>
-
 <template>
-  <Navbar v-if="isAuthenticated" />
   <router-view />
 
 </template>
 
 <script>
-  import Navbar from './components/Navbar.vue'
   import { useAuthStore } from './store/authStore.js'
-  import { computed, onMounted} from 'vue';
+  import {computed, onUpdated} from 'vue';
+  import {useRouter} from "vue-router";
 
   export default {
-  components: { Navbar },
   setup() {
     const authStore = useAuthStore();
-
-    // 로그인 상태 확인
+    const router = useRouter();
+    // ログイン状態確認(로그인 상태 확인)
     const isAuthenticated = computed(() => authStore.isAuthenticated());
 
-    // 새로고침 시 로그인 상태 유지
+    // リロード時にログイン状態を維持(새로고침 시 로그인 상태 유지)
     onUpdated(() => {
       if (localStorage.getItem('user_id') == null){
         console.log('token')

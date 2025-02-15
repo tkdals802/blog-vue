@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">📌 게시물 목록</h1>
+    <h1 class="title">📌 ruby ブログ</h1>
 
     <div class="user-info">
       <h3>user : {{ user.username }}</h3>
@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
 }
 .title {
@@ -73,6 +73,8 @@ export default {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 160px;
+  flex-shrink: 0;
 }
 
 .post-item {
@@ -113,6 +115,7 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+  width: 160px;
 }
 
 .tag-list {
