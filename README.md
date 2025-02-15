@@ -33,9 +33,17 @@
 
 `'/' : Login page`
 
-`signup : SignUp page`
+`'/signup' : SignUp page`
 
-`/dashboard : Main page`
+`'/dashboard' : Main page`
+
+`'/post/:id' : post本文 page`
+
+`'/search' : title検索結果page`
+
+`'/createpost' : create post page`
+
+`'/updatepost/:id' : 本文修正 page`
 
  ## blog vue page説明
 
