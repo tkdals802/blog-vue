@@ -20,6 +20,7 @@
     * router/
       index.js  -  page routeを正義
     * scripts/  -  ブイファイルのスクリプトを分離
+    * style/  -  css fileの分離
     * store/
       authStore.js  -  login, logout, Auth logicを正義
     * views/  -  blog内部のvue-pageを正義
