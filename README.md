@@ -8,7 +8,9 @@
 
 ### vue setup
 `$ npm create vue`
-`npm install`
+
+`$ npm install`
+
 `$ npm run dev`
 
 ## project構造
