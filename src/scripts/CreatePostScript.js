@@ -15,11 +15,12 @@ export default {
     };
   },
   methods: {
-    // Update tags when the user types in the input field
+
+    // , を基準にtagを分離
     updateTags() {
       this.form.tags = this.form.tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
     },
-    // Handle form submission
+
     async submitForm() {
       const data = {
         article: {
@@ -30,6 +31,7 @@ export default {
         }
       };
 
+      //create post api
       try {
         const token = localStorage.getItem('JWT_token')
         await this.$axios.post(
@@ -37,14 +39,14 @@ export default {
             data,
             {
             headers:{
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${token}`,//check token
             }
           });
 
         // Success message
         this.message = 'Article successfully created!';
         this.messageType = 'alert alert-success';
-        this.$router.push('/dashboard');
+        this.$router.push('/dashboard'); //文を作成した後、main pageに移動
       } catch (error) {
         console.log(error)
       }

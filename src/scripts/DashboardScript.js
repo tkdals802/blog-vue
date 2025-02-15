@@ -16,20 +16,22 @@ export default {
         const token = localStorage.getItem('JWT_token')
         const user_id = localStorage.getItem('user_id')
 
+        //すべてのpost listをget
         this.$axios
             .get('http://localhost:3000/api/articles',
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`,
+                        Authorization: `Bearer ${token}`,//check token
                     }
                 })
             .then((response) => {
                 this.posts = response.data.articles;
 
+                //userの情報を検索
                 this.$axios.get(`http://localhost:3000/api/users/${user_id}`,
                     {
                         headers: {
-                            Authorization: `Bearer ${token}`,
+                            Authorization: `Bearer ${token}`,//check token
                         }
                     })
                     .then((response) => {
@@ -37,18 +39,20 @@ export default {
                     })
                     .catch((error) => {
                         router.push('/');
-                        console.error(error);
+                        console.error(error);　//errorが出来たらlogin pageに移動
                     })
             })
             .catch((error) => {
                 router.push('/')
-                console.error(error);
+                console.error(error);//errorが出来たらlogin pageに移動
             });
 
         this.getCategories();
     },
 
     computed: {
+        //vue.jsの中でcategoryでpostをfiltering
+
         filteredCategory() {
             return this.posts.filter(post => {
                 const matchesCategory = this.selectedCategory ? post.category_name === this.selectedCategory : true;
@@ -62,27 +66,28 @@ export default {
 
         searchPosts() {
             const keyword = this.inputText;
-            if (keyword !== '') {
+            if (keyword !== '') { //input textがなければ検索しない
                 this.$router.push({path: '/search', query: {keyword}})
             }
         },
 
         goToCreatePost() {
-            this.$router.push('/createpost');
+            this.$router.push('/createpost');　//create post pageに移動
         },
 
         logout(){
             const authStore = useAuthStore();
-            authStore.logout();
+            authStore.logout();　//delete token, user_id
         },
 
+        //main pageのcategories listのために get all categories api
         getCategories() {
             const token = localStorage.getItem('JWT_token');
             this.$axios.get(
                 'http://localhost:3000/api/categories',
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`  // 백틱을 사용하여 템플릿 문자열을 사용해야 합니다
+                        Authorization: `Bearer ${token}`  // check token
                     }
                 }
                 )

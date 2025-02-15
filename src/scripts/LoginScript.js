@@ -13,11 +13,11 @@ export default {
     const errorMessage = ref("");
 
     const submitLogin = async () => {
-      const success = await authStore.login(username.value, password.value);
+      const success = await authStore.login(username.value, password.value);//get token
 
       console.log(success)
       if (success) {
-        router.push("/dashboard"); // 로그인 성공 시 이동
+        router.push("/dashboard"); // login成功した後main pageに移動
       } else {
         errorMessage.value = "login fail please retry.";
       }

@@ -8,6 +8,7 @@ export const useAuthStore = defineStore("auth", {
   }),
   actions: {
     async login(username, password) {
+      //login api
       try {
         const response = await axios.post("http://localhost:3000/api/users/login", {
           user:{
@@ -15,24 +16,24 @@ export const useAuthStore = defineStore("auth", {
             password,
           }
         });
-        localStorage.setItem('user_id', response.data.user.id)
+        localStorage.setItem('user_id', response.data.user.id) //save user_id, token at localStorage
         localStorage.setItem('JWT_token', response.data.token)
-        return true; // 로그인 성공
+        return true; // login success
       } catch (error) {
         console.error("Login failed:", error.response?.data);
-        return false; // 로그인 실패
+        return false; // login fail
       }
     },
 
     logout() {
       const router = useRouter();
       localStorage.removeItem('user_id')
-      localStorage.removeItem('JWT_token')
-      router.push('/')
+      localStorage.removeItem('JWT_token') //delete user_id, token from localStorage
+      router.push('/') //login pageに移動
     },
 
     isAuthenticated() {
-      return !!localStorage.getItem('user_id');
+      return !!localStorage.getItem('user_id'); //user_idとtokenは一緒にsave, deleteするので一つだけcheck
     },
   },
 });
