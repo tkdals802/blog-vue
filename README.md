@@ -98,13 +98,10 @@
 
 ## mobile 環境
 
-| 이미지 번호 | 이미지 링크  |
-|-------------|--------------|
-| 1           | ![image](https://github.com/user-attachments/assets/3a4aaba4-922c-4178-a491-6cacf978020e) |
-| 2           | ![image](https://github.com/user-attachments/assets/01f412b8-1d38-4149-86fb-2e6cf01a0b98) |
-| 3           | ![image](https://github.com/user-attachments/assets/604a4d97-7dc2-43ea-b61d-87505e67f4b2) |
-| 4           | ![image](https://github.com/user-attachments/assets/ccd0fd37-b8fd-4523-93fa-0607ad00f53d) |
-| 5           | ![image](https://github.com/user-attachments/assets/3bdc3f07-d558-443c-977f-c0b1afd5ee9d) |
+| 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|
+| ![image](https://github.com/user-attachments/assets/3a4aaba4-922c-4178-a491-6cacf978020e) | ![image](https://github.com/user-attachments/assets/01f412b8-1d38-4149-86fb-2e6cf01a0b98) | ![image](https://github.com/user-attachments/assets/604a4d97-7dc2-43ea-b61d-87505e67f4b2) | ![image](https://github.com/user-attachments/assets/ccd0fd37-b8fd-4523-93fa-0607ad00f53d) | ![image](https://github.com/user-attachments/assets/3bdc3f07-d558-443c-977f-c0b1afd5ee9d) |
+
 
 
 
