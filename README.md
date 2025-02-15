@@ -24,6 +24,13 @@
     * App.vue  -  最上位vue-file
     * main.js  -  最上位 file
 
+## blog pageの流れ
+
+- loginをしないとblog内部にアクセスできない
+- tokenが満了するかlogoutをするとlogin pageに移動する
+- 会員登録を完了すると自動的にlogin pageに移動する
+- postを作成すると、すぐにmain pageに移動する
+
  ## login logic
 - loginをしてページの内部に入ると、login状態を維持し、apiを呼び出すたびに確認しなければならない
 - jwt tokenを使用して最初のログイン時にtokenとuser_idをlocal storageに保存する
