@@ -95,3 +95,14 @@
 <img src="https://github.com/user-attachments/assets/14c6fc03-3174-43c9-9283-fccefb72bca0" width="50%" />
 
 - 元のpostの内容が初期値に設定
+
+## mobile 環境
+
+![image](https://github.com/user-attachments/assets/3a4aaba4-922c-4178-a491-6cacf978020e)
+![image](https://github.com/user-attachments/assets/01f412b8-1d38-4149-86fb-2e6cf01a0b98)
+![image](https://github.com/user-attachments/assets/604a4d97-7dc2-43ea-b61d-87505e67f4b2)
+![image](https://github.com/user-attachments/assets/ccd0fd37-b8fd-4523-93fa-0607ad00f53d)
+![image](https://github.com/user-attachments/assets/3bdc3f07-d558-443c-977f-c0b1afd5ee9d)
+
+
+
